@@ -98,14 +98,14 @@ public final class KokoroTTS {
     predictorLSTM = LSTM(
       inputSize: config.hiddenDim + config.styleDim,
       hiddenSize: config.hiddenDim / 2,
-      wxForward: sanitizedWeights["predictor.lstm.Wx_forward"]!,
-      whForward: sanitizedWeights["predictor.lstm.Wh_forward"]!,
-      biasIhForward: sanitizedWeights["predictor.lstm.bias_ih_forward"]!,
-      biasHhForward: sanitizedWeights["predictor.lstm.bias_hh_forward"]!,
-      wxBackward: sanitizedWeights["predictor.lstm.Wx_backward"]!,
-      whBackward: sanitizedWeights["predictor.lstm.Wh_backward"]!,
-      biasIhBackward: sanitizedWeights["predictor.lstm.bias_ih_backward"]!,
-      biasHhBackward: sanitizedWeights["predictor.lstm.bias_hh_backward"]!
+      wxForward: sanitizedWeights["predictor.lstm.weight_ih_l0"]!,
+      whForward: sanitizedWeights["predictor.lstm.weight_hh_l0"]!,
+      biasIhForward: sanitizedWeights["predictor.lstm.bias_ih_l0"]!,
+      biasHhForward: sanitizedWeights["predictor.lstm.bias_hh_l0"]!,
+      wxBackward: sanitizedWeights["predictor.lstm.weight_ih_l0_reverse"]!,
+      whBackward: sanitizedWeights["predictor.lstm.weight_hh_l0_reverse"]!,
+      biasIhBackward: sanitizedWeights["predictor.lstm.bias_ih_l0_reverse"]!,
+      biasHhBackward: sanitizedWeights["predictor.lstm.bias_hh_l0_reverse"]!
     )
 
     // Initialize duration projection layer
