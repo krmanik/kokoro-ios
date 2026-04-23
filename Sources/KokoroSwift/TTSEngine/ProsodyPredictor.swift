@@ -48,14 +48,14 @@ final class ProsodyPredictor {
     shared = LSTM(
       inputSize: dHid + styleDim,
       hiddenSize: dHid / 2,  // Half size because bidirectional (forward + backward)
-      wxForward: weights["predictor.shared.weight_ih_l0"]!,
-      whForward: weights["predictor.shared.weight_hh_l0"]!,
-      biasIhForward: weights["predictor.shared.bias_ih_l0"]!,
-      biasHhForward: weights["predictor.shared.bias_hh_l0"]!,
-      wxBackward: weights["predictor.shared.weight_ih_l0_reverse"]!,
-      whBackward: weights["predictor.shared.weight_hh_l0_reverse"]!,
-      biasIhBackward: weights["predictor.shared.bias_ih_l0_reverse"]!,
-      biasHhBackward: weights["predictor.shared.bias_hh_l0_reverse"]!
+      wxForward: weights["predictor.shared.Wx_forward"]!,
+      whForward: weights["predictor.shared.Wh_forward"]!,
+      biasIhForward: weights["predictor.shared.bias_ih_forward"]!,
+      biasHhForward: weights["predictor.shared.bias_hh_forward"]!,
+      wxBackward: weights["predictor.shared.Wx_backward"]!,
+      whBackward: weights["predictor.shared.Wh_backward"]!,
+      biasIhBackward: weights["predictor.shared.bias_ih_backward"]!,
+      biasHhBackward: weights["predictor.shared.bias_hh_backward"]!
     )
 
     // Initialize F0 (pitch) prediction branch

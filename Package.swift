@@ -11,7 +11,6 @@ let package = Package(
   products: [
     .library(
       name: "KokoroSwift",
-      type: .dynamic,
       targets: ["KokoroSwift"]
     ),
   ],
@@ -19,7 +18,7 @@ let package = Package(
     .package(url: "https://github.com/ml-explore/mlx-swift", exact: "0.30.2"),
     // .package(url: "https://github.com/mlalma/eSpeakNGSwift", from: "1.0.1"),
     .package(path: "../MisakiSwift"),
-    .package(url: "https://github.com/mlalma/MLXUtilsLibrary.git", exact: "0.0.6")
+    .package(path: "../MLXUtilsLibrary")
   ],
   targets: [
     .target(
